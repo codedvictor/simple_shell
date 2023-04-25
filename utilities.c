@@ -34,7 +34,7 @@ int _strlen(const char *c)
 {
 	int x = 0;
 
-	while (s[x])
+	while (c[x])
 		x++;
 
 	return (x);

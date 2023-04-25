@@ -34,7 +34,7 @@ void *_realloc(void *pntr, unsigned int o_size, unsigned int n_size)
 		}
 	}
 
-	nptr = malloc(new_size);
+	nptr = malloc(n_size);
 
 	if (nptr == NULL)
 		return (NULL);

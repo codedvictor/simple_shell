@@ -10,11 +10,11 @@ char *find(char *cname)
 {
 	char *env_path = NULL, **p_tok = NULL;
 	int x = 0, num_del = 0;
-	struct stt sb;
+	struct stat sb;
 
 	if (cname)
 	{
-		if (stt(cname, &sb) != 0 && cname[0] != '/')
+		if (stat(cname, &sb) != 0 && cname[0] != '/')
 		{
 			env_path = _getenv("PATH");
 			num_del = count_delims(env_path, ":") + 1;
@@ -40,7 +40,7 @@ char *find(char *cname)
 			frees_tokens(p_tok);
 		}
 
-		if (stt(cname, &sb) == 0)
+		if (stat(cname, &sb) == 0)
 			return (cname);
 	}
 
