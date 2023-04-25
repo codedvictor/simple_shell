@@ -8,10 +8,10 @@
   */
 void frees_get_env(char *env_path)
 {
-        int x;
+	int x;
 
-        for (x = 4; x >= 0; x--)
-                env_path--;
+	for (x = 4; x >= 0; x--)
+		env_path--;
 
-        free(env_path);
+	free(env_path);
 }
