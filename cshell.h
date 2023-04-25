@@ -33,7 +33,8 @@ void frees_get_env(char *env_path);
 void frees_tokens(char **tok);
 int exec(char *cname, char **opts);
 char *_getenv(const char *name);
-char **tokenize(char *str, char *del, int ln);
+char **tokenize(char *stg, char *del, int ln);
 char *find(char *cname);
+char *concat_path(char *pathname, char *progname);
 
 #endif /* _C_SHELL_ */
