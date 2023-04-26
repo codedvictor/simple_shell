@@ -67,7 +67,7 @@ int exec(char *cname, char **opts)
 			return (-1);
 		case 0:
 			execve(cname, opts, environ);
-			break;
+			return (0);
 		default:
 			do {
 				waitpid(child, &stts, WUNTRACED);
