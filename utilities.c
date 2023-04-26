@@ -49,33 +49,42 @@ int _strlen(const char *c)
   */
 int _strcmp(char *st1, char *st2)
 {
-	int ln_s1 = 0, ln_s2 = 0, pos = 0, dev = 0, lim = 0;
+        int ln_s1 = 0, ln_s2 = 0, pos = 0, dev = 0, lim = 0;
 
-	ln_s1 = _strlen(st1);
-	ln_s2 = _strlen(st2);
+        ln_s1 = _strlen(st1);
+        ln_s2 = _strlen(st2);
 
-	if (ln_s1 <= ln_s2)
-		lim = ln_s1;
-	else
-		lim = ln_s2;
+        if (ln_s1 <= ln_s2)
+                lim = ln_s1;
+        else
+                lim = ln_s2;
 
-	while (pos <= lim)
-	{
-		if (st1[pos] == st2[pos])
-		{
-			pos++;
-			continue;
-		}
-		else
-		{
-			dev = st1[pos] - st2[pos];
-			break;
-		}
+        dev = 0;
+        pos = 0;
 
-		pos++;
-	}
+        while (pos < lim)
+        {
+                if (st1[pos] == st2[pos])
+                {
+                        pos++;
+                        continue;
+                }
+                else
+                {
+                        dev = st1[pos] - st2[pos];
+                        break;
+                }
 
-	return (dev);
+                pos++;
+        }
+
+
+        if (dev < 0)
+                return -1;
+        else if (dev > 0)
+                return 1;
+        else
+                return 0;
 }
 
 /**
