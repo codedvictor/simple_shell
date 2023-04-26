@@ -10,7 +10,7 @@
 
 void _handle_exit(char **u_tok, char *line)
 {
-	int stat = 0;
+	int status = 0;
 
 	if (u_tok[1] == NULL)
 	{
@@ -24,12 +24,12 @@ void _handle_exit(char **u_tok, char *line)
 		frees_tokens(u_tok);
 		exit(0);
 	}
-	stat = _atoi(u_tok[1]);
-	if (stat != 0)
+	status = _atoi(u_tok[1]);
+	if (status != 0)
 	{
 		free(line);
 		frees_tokens(u_tok);
-		exit(stat);
+		exit(status);
 	}
 	else
 	{
@@ -40,7 +40,5 @@ void _handle_exit(char **u_tok, char *line)
 		frees_tokens(u_tok);
 		exit(1);
 	}
-	free(line);
-	frees_tokens(u_tok);
 }
 
