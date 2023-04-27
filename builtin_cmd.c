@@ -20,7 +20,7 @@ int execBuiltInCommands(char **u_tok, char *line)
 			{
 				case 0:
 					_handle_exit(u_tok, line);
-					return (0);		
+					return (0);
 				case 1:
 					chdir(u_tok[1]);
 					return (1);
